@@ -1,13 +1,15 @@
 pipeline {
     agent any
-     environment {
+    environment {
         PATH = "$PATH:/usr/share/maven/bin"
     }
+
     stages {
 
         stage('Git Checkout'){
             steps{
-               git branch: 'main', url: 'https://github.com/smartobi/webapp-sonarqube.git'
+               git branch: 'main', url: 'https://github.com/smartobi/webapp-sonarqube.git' 
+            }
         }
 
         stage('Unit Testing'){
@@ -33,13 +35,11 @@ pipeline {
                    script{
                      withSonarQubeEnv(credentialsId: 'gen') {
                      sh 'mvn clean package sonar:sonar'
-                       }
-                    }
-               
+                 }
                 }
+               
+            }
         }
-
+        
     }
-   
-}  
 }
