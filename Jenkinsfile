@@ -33,7 +33,7 @@ pipeline {
         stage('SonarQube analysis'){
             steps{
                    script{
-                     withSonarQubeEnv(credentialsId: 'gen') {
+                     withSonarQubeEnv(credentialsId: 'keytoken') {
                      sh 'mvn clean package sonar:sonar'
                  }
                 }
