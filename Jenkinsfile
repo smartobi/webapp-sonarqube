@@ -1,6 +1,8 @@
 pipeline {
     agent any
-
+     environment {
+        PATH = "$PATH:/usr/share/maven/bin"
+    }
     stages {
 
         stage('Git Checkout'){
@@ -31,11 +33,12 @@ pipeline {
                    script{
                      withSonarQubeEnv(credentialsId: 'gen') {
                      sh 'mvn clean package sonar:sonar'
-                 }
-                }
+                       }
+                    }
                
-            }
+                }
         }
-        
+
     }
-}
+   
+}   
