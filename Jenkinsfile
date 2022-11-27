@@ -44,7 +44,7 @@ pipeline {
         }
         stage('Quality Gate Status'){
             steps{
-                scrips{
+                script{
                     waitForQualityGate abortPipeline: false, credentialsId: 'keytoken'
                 }
             }
