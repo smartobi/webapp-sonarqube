@@ -39,6 +39,15 @@ pipeline {
                 }
                
             }
+
+        
+        }
+        stage('Quality Gate Status'){
+            steps{
+                scrips{
+                    waitForQualityGate abortPipeline: false, credentialsId: 'keytoken'
+                }
+            }
         }
         
     }
