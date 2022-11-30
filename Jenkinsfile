@@ -8,7 +8,7 @@ pipeline {
 
         stage('Git Checkout'){
             steps{
-               git branch: 'main', url: 'https://github.com/smartobi/webapp-sonarqube.git' 
+               git branch: 'main', url: 'https://github.com/smartobi/webapp-sonarqube'
             }
         }
 
@@ -41,15 +41,6 @@ pipeline {
             }
 
         
-        }
-        stage('Quality Gate Status'){
-            steps{
-                script{
-                    waitForQualityGate abortPipeline: false, credentialsId: 'keytoken'
-                }
-                    
-                
-            }
         }
         
     }
