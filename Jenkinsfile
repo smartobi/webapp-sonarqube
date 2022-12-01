@@ -81,7 +81,7 @@ pipeline {
         stage('Docker Image Build'){
             steps{
                 script{
-                    sh 'docker image build -t $JOB_NAME:1.$BUILD_ID'
+                    sh 'docker image build -t $JOB_NAME:1.$BUILD_ID .'
                     sh 'docker image tag $JOB_NAME:1.$BUILD_ID smartcloud2022/$JOB_NAME:1.$BUILD_ID'
                     sh 'docker image tag $JOB_NAME:1.$BUILD_ID smartcloud2022/$JOB_NAME:latest'
                 }
