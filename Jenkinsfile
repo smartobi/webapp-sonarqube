@@ -42,6 +42,7 @@ pipeline {
 
         
         }
+        
 
         stage('Quality Gate Status'){
             steps{
@@ -51,6 +52,26 @@ pipeline {
                  }
                 }
                
+        }
+        stage('Uploading war file to Nexus'){
+            steps{
+                script{
+                    nexusArtifactUploader artifacts: [
+                        [artifactId: 'MyWebApp', 
+                        classifier: '', 
+                        file: 'target/MyWebApp.war', 
+                        type: 'war'
+                        ]
+                        ],
+                         credentialsId: '', 
+                         groupId: 'com.mkyong', 
+                         nexusUrl: '44.211.86.199:8081', 
+                         nexusVersion: 'nexus3', 
+                         protocol: 'http', 
+                         repository: 'webapp-release', 
+                         version: '1.0.0'
+                }
+            }
         }
 
         
