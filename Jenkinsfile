@@ -88,6 +88,18 @@ pipeline {
             }
         }
 
+        stage('Push image to docker hub'){
+            steps{
+                script{
+                    withCredentials([string(credentialsId: 'docker_pass', variable: 'docker_hub_cred')]) {
+                       sh 'docker login -u smartcloud2022 -p ${docker_hub_cred}'
+                       sh 'docker image push smartcloud22/$JOB_NAME:1.$BUILD_ID'
+                       sh 'docker image push smartcloud22/$JOB_NAME:latest'
+                     }
+                }
+            }
+        }
+
         
         
         
