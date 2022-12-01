@@ -33,7 +33,7 @@ pipeline {
         stage('SonarQube analysis'){
             steps{
                    script{
-                     withSonarQubeEnv(credentialsId: 'keysecret') {
+                     withSonarQubeEnv(credentialsId: 'keytoken') {
                      sh 'mvn clean package sonar:sonar'
                  }
                 }
@@ -46,13 +46,7 @@ pipeline {
         stage('Quality Gate Status'){
             steps{
                    script{
-                     timeout(time: 1, unit: 'HOURS') {
-                 waitForQualityGate abortPipeline: true
-                  if (qg.status != 'OK') {
-                            error "Pipeline aborted due to quality gate failure: ${qg.status}"
-                        }
-              }
-                   
+                   waitForQualityGate abortPipeline: false, credentialsId: 'keytoken'
                     
                  }
                 }
