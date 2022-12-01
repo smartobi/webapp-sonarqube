@@ -69,21 +69,21 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav mx-auto py-0">
-                <a href="index.html" class="nav-item nav-link">Home</a>
-                <a href="about.html" class="nav-item nav-link">About</a>
-                <a href="service.html" class="nav-item nav-link">Service</a>
-                <a href="product.html" class="nav-item nav-link">Product</a>
+                <a href="index.jsp" class="nav-item nav-link">Home</a>
+                <a href="about.jsp" class="nav-item nav-link active">About</a>
+                <a href="service.jsp" class="nav-item nav-link">Service</a>
+                <a href="product.jsp" class="nav-item nav-link">Product</a>
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Pages</a>
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                     <div class="dropdown-menu m-0">
-                        <a href="blog.html" class="dropdown-item">Blog Grid</a>
-                        <a href="detail.html" class="dropdown-item active">Blog Detail</a>
-                        <a href="feature.html" class="dropdown-item">Features</a>
-                        <a href="team.html" class="dropdown-item">The Team</a>
-                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                        <a href="blog.jsp" class="dropdown-item">Blog Grid</a>
+                        <a href="detail.jsp" class="dropdown-item">Blog Detail</a>
+                        <a href="feature.jsp" class="dropdown-item">Features</a>
+                        <a href="team.jsp" class="dropdown-item">The Team</a>
+                        <a href="testimonial.jsp" class="dropdown-item">Testimonial</a>
                     </div>
                 </div>
-                <a href="contact.html" class="nav-item nav-link">Contact</a>
+                <a href="contact.jsp" class="nav-item nav-link">Contact</a>
             </div>
         </div>
     </nav>
