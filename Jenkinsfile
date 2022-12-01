@@ -88,7 +88,7 @@ pipeline {
             }
         }
 
-        stage('Push image to docker hub'){
+        stage('Push image to my docker hub'){
             steps{
                 script{
                     withCredentials([string(credentialsId: 'docker_pass', variable: 'docker_hub_cred')]) {
