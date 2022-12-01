@@ -5,6 +5,6 @@ RUN mvn install
 
 FROM openjdk:11.0
 WORKDIR /app
-COPY --from=build /app/target/MyWebApp.war /app/
+COPY --from=build /app/target/MyWebApp.jar /app/
 EXPOSE 9090
-CMD ["java","-war","MyWebApp.war"]
+CMD ["java","-jar","MyWebApp.jar"]

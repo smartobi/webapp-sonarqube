@@ -53,7 +53,7 @@ pipeline {
                 }
                
         }
-        stage('Uploading war file to Nexus'){
+        stage('Uploading jar file to Nexus'){
             steps{
                 script{
                     def readPomVersion = readMavenPom file: 'pom.xml'
@@ -63,8 +63,8 @@ pipeline {
                         [
                             artifactId: 'MyWebApp', 
                             classifier: '', 
-                            file: 'target/MyWebApp.war', 
-                            type: 'war'
+                            file: 'target/MyWebApp.jar', 
+                            type: 'jar'
                             ]
                             ], 
                             credentialsId: 'nexusserverlogin', 
